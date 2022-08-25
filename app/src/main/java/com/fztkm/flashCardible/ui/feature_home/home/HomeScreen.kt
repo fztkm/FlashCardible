@@ -14,8 +14,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.fztkm.flashCardible.ui.feature_home.components.CardibleCard
-import com.fztkm.flashCardible.ui.feature_home.components.FolderCard
+import com.fztkm.flashCardible.ui.feature_home.component.CardibleCard
+import com.fztkm.flashCardible.ui.feature_home.component.FolderCard
 import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 
 @Composable
@@ -52,11 +52,11 @@ fun HomeScreen(
                 .verticalScroll(rememberScrollState())
         ) {
             CardibleCard(title = "English words",
-                cardNum = 23, isStared = true, setStared = {}) {}
+                cardNum = 23, favorite = true, setFavorite = {}) {}
             CardibleCard(title = "History words",
-                cardNum = 230, isStared = false, setStared = {}) {}
+                cardNum = 230, favorite = false, setFavorite = {}) {}
             CardibleCard(title = "Science words",
-                cardNum = 10000, isStared = true, setStared = {}) {}
+                cardNum = 10000, favorite = true, setFavorite = {}) {}
             FolderCard(title = "Mathematics") {
 
             }

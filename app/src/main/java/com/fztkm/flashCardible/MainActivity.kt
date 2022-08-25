@@ -3,7 +3,7 @@ package com.fztkm.flashCardible
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.fztkm.flashCardible.ui.feature_home.add_cardible.AddCardibleScreen
+import com.fztkm.flashCardible.ui.feature_cardible.cardible.CardibleScreen
 import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,9 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FlashCardibleTheme {
-                AddCardibleScreen {
-                    
-                }
+                CardibleScreen()
             }
         }
     }

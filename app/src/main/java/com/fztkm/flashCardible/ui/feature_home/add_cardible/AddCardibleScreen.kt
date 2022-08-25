@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.fztkm.flashCardible.ui.components.ScreenFrame
-import com.fztkm.flashCardible.ui.feature_home.components.AddButton
-import com.fztkm.flashCardible.ui.feature_home.components.InputField
+import com.fztkm.flashCardible.ui.component.ScreenFrame
+import com.fztkm.flashCardible.ui.feature_home.component.AddButton
+import com.fztkm.flashCardible.ui.feature_home.component.InputField
 import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 
 @Composable

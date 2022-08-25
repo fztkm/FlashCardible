@@ -1,4 +1,4 @@
-package com.fztkm.flashCardible.ui.feature_home.components
+package com.fztkm.flashCardible.ui.feature_home.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.fztkm.flashCardible.ui.components.RoundedButton
+import com.fztkm.flashCardible.ui.component.RoundedButton
 import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 
 @Composable
@@ -25,7 +25,7 @@ fun AddButton(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 10.dp),
+                .padding(vertical = 13.dp),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {

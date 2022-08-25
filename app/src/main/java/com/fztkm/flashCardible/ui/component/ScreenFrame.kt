@@ -1,7 +1,10 @@
-package com.fztkm.flashCardible.ui.components
+package com.fztkm.flashCardible.ui.component
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -15,31 +18,31 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ScreenFrame(
+    bottomUpperPadding: Int = 20,
     bottom: @Composable () -> Unit,
     body: @Composable () -> Unit,
 ) {
-    Surface(
-    ) {
-        Column(
+    Surface {
+        Box(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = Modifier
-                    .weight(1f),
-                contentAlignment = Alignment.Center
-            ) {
-                body()
-            }
+            body()
+        }
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.BottomCenter
+        ) {
             BottomSheet(
-                modifier = Modifier
-                    .height(120.dp),
                 shape = RoundedCornerShape(
                     topStart = 40.dp, topEnd = 40.dp, bottomStart = 0.dp, bottomEnd = 0.dp,
                 ),
             ) {
                 Box(
-                    modifier = Modifier.padding(25.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 25.dp)
+                        .padding(bottom = 25.dp, top = bottomUpperPadding.dp)
                 ) {
                     bottom()
                 }

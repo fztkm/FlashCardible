@@ -1,6 +1,7 @@
-package com.fztkm.flashCardible.ui.components
+package com.fztkm.flashCardible.ui.component
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -10,7 +11,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun RoundedButton(
-    onClick: () -> Unit,
+    onClick: () -> Unit = {},
     content: @Composable () -> Unit,
 ) {
     TextButton(
@@ -19,7 +20,8 @@ fun RoundedButton(
         border = BorderStroke(4.dp, MaterialTheme.colors.primary),
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = MaterialTheme.colors.surface
-        )
+        ),
+        contentPadding = PaddingValues(0.dp)
     ) {
         content()
     }

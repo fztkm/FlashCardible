@@ -1,4 +1,4 @@
-package com.fztkm.flashCardible.ui.feature_home.components
+package com.fztkm.flashCardible.ui.feature_home.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,8 +19,8 @@ import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 fun CardibleCard(
     title: String,
     cardNum: Int,
-    isStared: Boolean,
-    setStared: (Boolean) -> Unit,
+    favorite: Boolean,
+    setFavorite: (Boolean) -> Unit,
     onClick: () -> Unit
 ) {
     Card(
@@ -48,9 +48,9 @@ fun CardibleCard(
                 )
             }
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopEnd) {
-                IconButton(onClick = { setStared(!isStared) }) {
+                IconButton(onClick = { setFavorite(!favorite) }) {
                     Icon(
-                        imageVector = if (isStared) Icons.Filled.Star
+                        imageVector = if (favorite) Icons.Filled.Star
                         else Icons.Outlined.StarOutline,
                         contentDescription = ""
                     )
@@ -99,8 +99,8 @@ private fun CardibleCardPreview() {
             CardibleCard(
                 title = "English words",
                 cardNum = 12,
-                isStared = false,
-                setStared = {}) {}
+                favorite = false,
+                setFavorite = {}) {}
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.fztkm.flashCardible.ui.feature_home.components
+package com.fztkm.flashCardible.ui.feature_home.component
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
