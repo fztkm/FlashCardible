@@ -12,8 +12,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.fztkm.flashCardible.ui.feature_cardible.component.DoubleColorOperationButton
 import com.fztkm.flashCardible.ui.feature_cardible.component.FocusedCard
-import com.fztkm.flashCardible.ui.feature_cardible.component.OperationButton
 import com.fztkm.flashCardible.ui.feature_cardible.component.QACard
 import com.fztkm.flashCardible.ui.feature_cardible.component.QuizScreenFrame
 import kotlinx.coroutines.launch
@@ -38,7 +38,7 @@ fun CardibleQuizScreen() {
                             "に懲罰的な遠征の準備を始めた。"
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-                OperationButton(
+                DoubleColorOperationButton(
                     leftIcon = Icons.Filled.Style,
                     leftText = "Answer",
                     onClickLeft = {},
