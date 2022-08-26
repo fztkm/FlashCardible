@@ -1,22 +1,26 @@
 package com.fztkm.flashCardible.ui.feature_cardible.cardible_quiz
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Style
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.fztkm.flashCardible.ui.component.ScreenFrame
 import com.fztkm.flashCardible.ui.feature_cardible.component.FocusedCard
 import com.fztkm.flashCardible.ui.feature_cardible.component.OperationButton
 import com.fztkm.flashCardible.ui.feature_cardible.component.QACard
+import com.fztkm.flashCardible.ui.feature_cardible.component.QuizScreenFrame
+import kotlinx.coroutines.launch
 
 @Composable
 fun CardibleQuizScreen() {
-    ScreenFrame(
+    QuizScreenFrame(
         bottomUpperPadding = 10.dp,
         bottom = {
             Column(modifier = Modifier.fillMaxWidth()) {
@@ -45,77 +49,72 @@ fun CardibleQuizScreen() {
                 //Icons.Filled.Redo
             }
         }) {
-        Column(
+        val listState = rememberLazyListState()
+        val coroutineScope = rememberCoroutineScope()
+        LazyColumn(
             modifier = Modifier
                 .fillMaxHeight()
-                .padding(horizontal = 10.dp)
-                .verticalScroll(rememberScrollState()),
+                .padding(horizontal = 10.dp),
+            state = listState,
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = false,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = false,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = false,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
-            QACard(
-                question = "What is your favorite sport?",
-                answer = "Track and field",
-                favorite = true,
-                setFavorite = {},
-                onShowDetail = {}
-            )
+            items(testList) { quiz ->
+                QACard(question = quiz.question, answer = quiz.answer,
+                    favorite = false, setFavorite = {}) {
+
+                }
+            }
+        }
+        LaunchedEffect(key1 = null) {
+            coroutineScope.launch {
+                listState.scrollToItem(8)
+            }
         }
     }
 }
+
+data class Quiz(
+    val question: String,
+    val answer: String,
+)
+
+val testList = listOf(
+    Quiz(
+        question = "0What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "1What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "2What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "3What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "4What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "5What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "6What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "7What is your favorite sport?",
+        answer = "Track and field",
+    ),
+    Quiz(
+        question = "8What is your favorite sport?",
+        answer = "Track and field",
+    ),
+
+    )
 

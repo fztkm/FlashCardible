@@ -1,10 +1,9 @@
 package com.fztkm.flashCardible.ui.feature_cardible.component
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -41,13 +40,22 @@ fun FocusedCard(
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )
-            Text(
-                text = text,
-                style = MaterialTheme.typography.body1,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.Center
-            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Column(
+                modifier = Modifier
+                    .heightIn(0.dp, 130.dp)
+                    .verticalScroll(
+                        rememberScrollState()
+                    )
+            ) {
+                Text(
+                    text = text,
+                    style = MaterialTheme.typography.body1,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+            }
             description?.let {
                 if (it.isNotEmpty()) {
                     Divider(
@@ -55,11 +63,19 @@ fun FocusedCard(
                             .padding(horizontal = 25.dp, vertical = 10.dp)
                             .fillMaxWidth()
                     )
-                    Text(
-                        description,
-                        style = MaterialTheme.typography.body2,
-                        fontWeight = FontWeight.Light
-                    )
+                    Column(
+                        modifier = Modifier
+                            .heightIn(0.dp, 180.dp)
+                            .verticalScroll(
+                                rememberScrollState()
+                            )
+                    ) {
+                        Text(
+                            description,
+                            style = MaterialTheme.typography.body2,
+                            fontWeight = FontWeight.Light
+                        )
+                    }
                 }
             }
         }

@@ -1,15 +1,11 @@
-package com.fztkm.flashCardible.ui.component
+package com.fztkm.flashCardible.ui.feature_cardible.component
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -18,25 +14,20 @@ import androidx.compose.ui.unit.dp
 import com.fztkm.flashCardible.util.advancedShadow
 
 @Composable
-fun ScreenFrame(
+fun QuizScreenFrame(
     bottomUpperPadding: Dp = 20.dp,
     bottom: @Composable () -> Unit,
     body: @Composable () -> Unit,
 ) {
     Surface {
-        Box(
+        Column(
             modifier = Modifier
-                .fillMaxWidth(),
-            contentAlignment = Alignment.Center
+                .fillMaxWidth()
         ) {
-            body()
-        }
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 10.dp),
-            contentAlignment = Alignment.BottomCenter
-        ) {
+            Box(modifier = Modifier.weight(1f)) {
+                body()
+            }
+            Spacer(modifier = Modifier.height(10.dp))
             BottomSheet(
                 modifier = Modifier.advancedShadow(offsetY = 5.dp),
                 shape = RoundedCornerShape(
