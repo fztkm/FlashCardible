@@ -2,7 +2,6 @@ package com.fztkm.flashCardible.ui.feature_cardible.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -11,7 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,23 +18,23 @@ import com.fztkm.flashCardible.ui.theme.FlashCardibleTheme
 
 @Composable
 fun FocusedCard(
+    modifier: Modifier = Modifier,
     text: String,
     index: Int,
     isQuestion: Boolean,
     description: String?
 ) {
     Box(
-        modifier = Modifier
-            .padding(10.dp)
-            .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)),
+        modifier = modifier
+            .padding(10.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.Start
         ) {
-            val label = if (isQuestion) "Q." else "A."
+            val label = if (isQuestion) "Q" else "A"
             Text(
-                text = "$label $index:",
+                text = "$label $index.",
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )

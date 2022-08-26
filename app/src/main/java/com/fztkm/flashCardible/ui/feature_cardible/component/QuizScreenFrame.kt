@@ -1,7 +1,10 @@
 package com.fztkm.flashCardible.ui.feature_cardible.component
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -27,7 +30,6 @@ fun QuizScreenFrame(
             Box(modifier = Modifier.weight(1f)) {
                 body()
             }
-            Spacer(modifier = Modifier.height(10.dp))
             BottomSheet(
                 modifier = Modifier.advancedShadow(offsetY = 5.dp),
                 shape = RoundedCornerShape(

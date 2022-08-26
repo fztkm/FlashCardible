@@ -39,6 +39,7 @@ fun CardibleScreen() {
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
@@ -46,6 +47,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = false,
@@ -53,6 +55,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = false,
@@ -60,6 +63,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
@@ -67,6 +71,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
@@ -74,6 +79,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = false,
@@ -81,6 +87,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
@@ -88,6 +95,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
@@ -95,6 +103,7 @@ fun CardibleScreen() {
                 onShowDetail = {}
             )
             QACard(
+                index = null,
                 question = "What is your favorite sport?",
                 answer = "Track and field",
                 favorite = true,
