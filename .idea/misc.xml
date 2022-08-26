@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1661400959002.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1661401535115.xml" value="0.2611111111111111" />
+        <entry key="../../../../layout/compose-model-1661405138992.xml" value="0.375" />
+        <entry key="../../../../layout/compose-model-1661417238310.xml" value="0.20777027027027026" />
+        <entry key="../../../../layout/compose-model-1661417244458.xml" value="0.335" />
+        <entry key="../../../../layout/compose-model-1661417429967.xml" value="0.165" />
+        <entry key="../../../../layout/compose-model-1661417509846.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1661417957359.xml" value="0.165" />
+        <entry key="../../../../layout/compose-model-1661417998914.xml" value="0.20861486486486486" />
+        <entry key="../../../../layout/compose-model-1661425745339.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661426093448.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661428520911.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661428563976.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661428597050.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661428609764.xml" value="0.13896103896103895" />
+        <entry key="../../../../layout/compose-model-1661428925030.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1661524668744.xml" value="0.24113175675675674" />
+        <entry key="../../../../layout/compose-model-1661530446861.xml" value="1.5" />
+        <entry key="../../../../layout/compose-model-1661530571812.xml" value="0.24166666666666667" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
