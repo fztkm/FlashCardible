@@ -15,10 +15,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.fztkm.flashCardible.util.advancedShadow
 
 @Composable
 fun ScreenFrame(
-    bottomUpperPadding: Int = 20,
+    bottomUpperPadding: Dp = 20.dp,
     bottom: @Composable () -> Unit,
     body: @Composable () -> Unit,
 ) {
@@ -31,10 +32,13 @@ fun ScreenFrame(
             body()
         }
         Box(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 10.dp),
             contentAlignment = Alignment.BottomCenter
         ) {
             BottomSheet(
+                modifier = Modifier.advancedShadow(offsetY = 5.dp),
                 shape = RoundedCornerShape(
                     topStart = 40.dp, topEnd = 40.dp, bottomStart = 0.dp, bottomEnd = 0.dp,
                 ),
@@ -42,7 +46,7 @@ fun ScreenFrame(
                 Box(
                     modifier = Modifier
                         .padding(horizontal = 25.dp)
-                        .padding(bottom = 25.dp, top = bottomUpperPadding.dp)
+                        .padding(bottom = 25.dp, top = bottomUpperPadding)
                 ) {
                     bottom()
                 }
@@ -57,7 +61,7 @@ fun BottomSheet(
     shape: Shape = MaterialTheme.shapes.medium,
     backgroundColor: Color = MaterialTheme.colors.surface,
     border: BorderStroke? = null,
-    elevation: Dp = 1.dp,
+    elevation: Dp = 10.dp,
     content: @Composable () -> Unit
 ) {
     Surface(
@@ -69,3 +73,5 @@ fun BottomSheet(
         content = content
     )
 }
+
+
